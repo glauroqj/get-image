@@ -3,14 +3,19 @@ body.select-image-time {
 	-moz-transition: all 0.5s ease-out;
 	-o-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
+	background: #000;
 }
 
 body.select-image-time img {
-	border: 2px solid #323232;
+	border: 3px solid #d63031;
 	-webkit-transition: all 0.5s ease-out;
 	-moz-transition: all 0.5s ease-out;
 	-o-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
+}
+body.select-image-time img:hover {
+	transform: scale(1.2);
+	border: 0px;
 }
 
 .card {

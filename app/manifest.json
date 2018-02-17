@@ -29,9 +29,7 @@
         "vendor/vue.min.js",
         "vendor/vue.js",  
         "vendor/moment.js",
-        "scripts/content.js",
-        "scripts/components/gallery-component.js",
-        "scripts/popup.js"
+        "scripts/content.js"
       ],
       "css": [
         "vendor/base.css"

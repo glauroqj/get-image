@@ -1,0 +1,61 @@
+{
+  "content_security_policy": "script-src 'self' https://ru.aliexpress.com/ 'unsafe-eval'; object-src 'self'","name": "Get Image",
+  "short_name": "Get Image",
+  "description": "Helping people to get images on google search",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "icons": {
+    "16": "images/get-image-20.png",
+    "128": "images/get-image-128.png"
+  },
+  "background": {
+    "scripts": ["vendor/moment.js", "vendor/pt-br.js", "scripts/background.js", "dist/background.min.js", "scripts/components/gallery-component.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/get-image-20.png",
+      "38": "images/get-image-20.png"
+    },
+    "default_title": "Get Image",
+    "default_popup": "pages/popup.html"
+    // "default_popup": "dist/popup.html"
+  },
+  "author": "Glauro Quintão Juliani",
+  "content_scripts": [
+    {
+      "js": [
+        "vendor/jquery.min.js", 
+        "vendor/vue.min.js",
+        "vendor/vue.js",  
+        "vendor/moment.js"
+      ],
+      "css": [
+        "vendor/base.css"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "identity",
+    "identity.email",
+    "activeTab",
+    "tabs",
+    "storage",
+    "cookies",
+    "alarms",
+    "notifications",
+    "background",
+    "clipboardWrite",
+    "clipboardRead",
+    "webRequest",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "vendor/bootstrap.min.css"
+  ]
+}

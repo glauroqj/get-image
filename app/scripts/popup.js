@@ -10,7 +10,15 @@
 			console.log('CARREGOU ')
 		},
 		methods: {
+			selectImage() {
 
+				chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+					chrome.tabs.sendMessage(tabs[0].id, {"message": "insert_class_on_body"}, function(response) {
+						console.log(response);
+					});
+				});
+
+			}
 		}
 	});
 

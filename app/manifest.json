@@ -9,7 +9,7 @@
     "128": "images/get-image-128.png"
   },
   "background": {
-    "scripts": ["vendor/moment.js", "vendor/pt-br.js", "scripts/background.js", "dist/background.min.js", "scripts/components/gallery-component.js"],
+    "scripts": ["vendor/moment.js", "vendor/pt-br.js", "scripts/background.js", "dist/background.min.js"],
     "persistent": true
   },
   "browser_action": {
@@ -28,14 +28,16 @@
         "vendor/jquery.min.js", 
         "vendor/vue.min.js",
         "vendor/vue.js",  
-        "vendor/moment.js"
+        "vendor/moment.js",
+        "scripts/content.js",
+        "scripts/components/gallery-component.js",
+        "scripts/popup.js"
       ],
       "css": [
         "vendor/base.css"
       ],
       "matches": [
-        "http://*/*",
-        "https://*/*"
+        "<all_urls>"
       ]
     }
   ],

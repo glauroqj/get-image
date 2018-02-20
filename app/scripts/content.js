@@ -30,7 +30,7 @@
 
 				insertMessage('message', 'Imagem enviada para galeria!');
 
-				window.open(path);
+				// window.open(path);
 
 			}
 
@@ -43,10 +43,15 @@
 
 
 	let bodyMessage = null;
+	let queueMessage = [];
 
 	function insertMessage(action, text) {
-		$(bodyMessage).remove();
-		bodyMessage = $('<div class="message-global-image">'+text+'</div>');
+		// $(bodyMessage).remove();
+		bodyMessage = $('<div id="message'+queueMessage.length+'" class="message-global-image">'+text+'</div>');
+
+		queueMessage.push(bodyMessage);
+
+		console.log(queueMessage)
 
 		$(bodyMessage).appendTo('body');
 
@@ -63,10 +68,23 @@
 
 	function removeMessage() {
 		setTimeout(function() {
-			$(bodyMessage).animate({
-				left: '-350px'
-			});
+
+			while ( queueMessage.length > 0 ) {
+
+				let id = queueMessage.length - 1;
+				queueMessage.splice(-1);
+				$('#message'+id).animate({
+					left: '-350px'
+				}, function() {
+					setTimeout(function() {
+						$('#message'+id).remove();
+					}, 850);
+				});
+				
+			}
+
 		}, 3000);
 	}
+
 
 })();

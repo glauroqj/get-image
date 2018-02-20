@@ -1,4 +1,4 @@
-body.select-image-time {
+/*body.select-image-time {
 	-webkit-transition: all 0.5s ease-out;
 	-moz-transition: all 0.5s ease-out;
 	-o-transition: all 0.5s ease-out;
@@ -16,6 +16,24 @@ body.select-image-time img {
 body.select-image-time img:hover {
 	transform: scale(1.2);
 	border: 0px;
+}*/
+
+body .message-global-image {
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+	display: block;
+	position: fixed;
+	bottom: 30px;
+	left: -350px;
+	width: 300px;
+	background: #323232;
+	color: #ffffff;
+    padding: 15px;
+    font-size: 25px;
+    border-radius: 15px;
+    z-index: 99999999;
 }
 
 .card {

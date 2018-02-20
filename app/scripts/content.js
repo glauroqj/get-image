@@ -2,42 +2,71 @@
 
 	chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		if( request.message === "insert_class_on_body" ) {
-			$('body').addClass('select-image-time');
-			watchImageChoice();
+			imageChoice();
 		}
 	});
 
 
-	function watchImageChoice() {
-		
-		$('body').each(function(index, el) {
-			$('a').removeAttr('href');
-			// console.log( $('a img').attr('src') )
-		});
+	function imageChoice() {
 
 		$('body').on('click', 'img', function(event) {
 			event.preventDefault();
 			/* Act on the event */
 			let path = event.currentTarget.src
 
-			console.log('ENTRANDO: '+path)
+			let verifyString = path.split(':');
 
-			convertImage(path);
+			console.log(verifyString)
 
-			// window.open(image.src)
+			if ( event.currentTarget.localName == 'img' && verifyString[0] != 'data' ) {
+
+				// console.log(event)
+
+				// console.log( $(this).parent() )
+
+				// console.log( $(this).parents()[1] )
+
+				// console.log( $(this).closest() )
+
+				insertMessage('message', 'Imagem enviada para galeria!');
+
+				window.open(path);
+
+			}
+
+			// console.log('ENTRANDO: '+path)
 
 
 		});
 
 	}
 
-	function convertImage(path) {
-		let image = new Image();
-		image.src = path;
 
-		let w = window.open('');
-		w.document.write(image.outerHTML);
+	let bodyMessage = null;
 
+	function insertMessage(action, text) {
+		$(bodyMessage).remove();
+		bodyMessage = $('<div class="message-global-image">'+text+'</div>');
+
+		$(bodyMessage).appendTo('body');
+
+		if( action == 'message' ) {			
+
+			$(bodyMessage).animate({
+				left: '30px'
+			});
+			removeMessage();
+
+		}
+
+	}
+
+	function removeMessage() {
+		setTimeout(function() {
+			$(bodyMessage).animate({
+				left: '-350px'
+			});
+		}, 3000);
 	}
 
 })();

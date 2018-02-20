@@ -6,6 +6,7 @@
 		}
 	});
 
+	let queueImage = [];
 
 	function imageChoice() {
 
@@ -28,9 +29,31 @@
 
 				// console.log( $(this).closest() )
 
-				insertMessage('message', 'Imagem enviada para galeria!');
 
-				// window.open(path);
+				let store = localStorage.getItem('Images-Gallery');
+
+				if( store == '' || store == undefined || store == null ) {
+					let arr = [];
+					arr.push(path)
+					localStorage.setItem('Images-Gallery', arr)
+					insertMessage('message', 'Imagem enviada para galeria!');
+					window.open(path);
+					return false;
+				}
+
+				let arrayStore = store.split(',');
+				console.log(arrayStore)
+
+				if( store != path ) {
+					arrayStore.push(path)
+					localStorage.setItem('Images-Gallery', arrayStore);
+					insertMessage('message', 'Imagem enviada para galeria!');
+					window.open(path);
+					return false;
+				}
+
+				insertMessage('message', 'Imagem já está na galeria!');
+
 
 			}
 

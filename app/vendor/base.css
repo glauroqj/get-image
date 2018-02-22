@@ -36,6 +36,25 @@ body .message-global-image {
     z-index: 99999999;
 }
 
+body .alert-on {
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+	background-color: #2ecc71;
+	color: #fff;
+	font-size: 20px;
+	position: fixed;
+	top: 10px;
+	left: -240px;
+	display: block;
+	width: 240px;
+	padding: 10px;
+	border-radius: 5px;
+	position: fixed;
+	z-index: 99999999999;
+} 
+
 .card {
 	margin-bottom: 0px;
 	min-width: 350px;

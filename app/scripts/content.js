@@ -3,6 +3,7 @@
 	chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		if( request.message === "insert_class_on_body" ) {
 			imageChoice();
+			insertAlert();
 		}
 	});
 
@@ -107,6 +108,20 @@
 			}
 
 		}, 3000);
+	}
+
+	function insertAlert() {
+		let alertOn = $('<div class="alert-on">Extensão Get-Image Ativa</div>');
+
+		if( $('.alert-on').html() ) {
+			return false;
+		}
+
+		$(alertOn).appendTo('body');
+
+		$(alertOn).animate({
+			left: '30px'
+		});
 	}
 
 

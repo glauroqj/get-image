@@ -18,7 +18,7 @@
 
 			let verifyString = path.split(':');
 
-			console.log(verifyString)
+			// console.log(verifyString)
 
 			if ( event.currentTarget.localName == 'img' && verifyString[0] != 'data' ) {
 
@@ -45,7 +45,18 @@
 				let arrayStore = store.split(',');
 				console.log(arrayStore)
 
-				if( store != path ) {
+
+				/* verify if link exist on storage */
+				let hasLinkOnStorage = false; 
+				arrayStore.filter(function(value, index) {
+					if( value == path ) {
+						hasLinkOnStorage = true;
+						return false;
+					}
+				});
+
+
+				if( !hasLinkOnStorage ) {
 					arrayStore.push(path)
 					localStorage.setItem('Images-Gallery', arrayStore);
 					insertMessage('message', 'Imagem enviada para galeria!');

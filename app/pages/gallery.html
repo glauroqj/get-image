@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="pt-br">
+    <meta charset="UTF-8">
+    <title>Galeria - Get Image</title>
+    <link rel="stylesheet" href="../vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/base.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue2-animate@1.0.4/dist/vue2-animate.min.css">
+</head>
+
+<body>
+    <div id="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <loading :loading="load">
+                        <div slot="body-loading">
+                            <h3>Carregando...</h3>
+                        </div>
+                    </loading>
+<!--                     <gallery :loading="!load">
+                        <div slot="grid-gallery">
+                            <div class="row">
+                                <h2>Galeria</h2>
+                            </div>
+                            <div class="row">
+
+                            </div>
+                        </div>
+                    </gallery> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- componentes -->
+    <script type="text/x-template" id="loading">
+        <transition name="fade" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+            <div v-if="loading">
+                <slot name="body-loading"></slot>
+            </div>
+        </transition>
+    </script>
+
+    <script type="text/x-template" id="gallery">
+        <transition name="fade" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+            <div v-if="!loading">
+                <slot name="grid-gallery"></slot>
+            </div>
+        </transition>
+    </script>
+    <!-- end - componentes -->
+
+    <!-- <script src="../vendor/vue.min.js"></script> -->
+    <script src="../vendor/vue.js"></script>
+    <script src="../vendor/jquery.min.js"></script>
+    <script src="../vendor/moment.js"></script>
+    <script src="../vendor/pt-br.js"></script>
+
+    <script src="../scripts/components/loading-component.js"></script>
+    <script src="../scripts/components/gallery-component.js"></script>
+    <script src="../scripts/gallery.js"></script>
+    <!-- <script src="../dist/gallery.min.js"></script> -->
+</body>
+
+</html>

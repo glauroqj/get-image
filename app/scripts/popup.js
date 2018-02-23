@@ -4,10 +4,21 @@
 		name: 'Get-Image',
 		el: '#getImage',
 		data: {
-			title: 'OLAR'
+			title: 'OLAR',
+			emptyStore: true,
+			textGallery: ''
 		},
 		mounted() {
-			console.log('CARREGOU ')
+			let store = localStorage.getItem('Images-Gallery');
+			console.log(store)
+			if( store == '' || store == undefined || store == null ) {
+				this.emptyStore = true;
+				this.textGallery = 'Galeria vazia'
+				return false
+			}
+			this.emptyStore = false;
+			this.textGallery = 'Galeria'
+
 		},
 		methods: {
 			selectImage() {
@@ -18,9 +29,22 @@
 					});
 				});
 
+			},
+			openGallery() {
+
+				chrome.tabs.create({
+					url: chrome.extension.getURL('pages/gallery.html'),
+					active: true
+				}, function(tab) {
+					chrome.windows.create({
+						tabId: tab.id,
+						type: 'tab',
+						focused: true
+					});
+				});
+
 			}
 		}
 	});
-
 
 })();

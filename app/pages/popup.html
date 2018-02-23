@@ -20,7 +20,9 @@
                     <h4 class="card-title mb-3">
                         Bem vindo! 
                         <span class="pull-right">
-                            <button type="button" class="btn btn-sm btn-outline-success"><i class="fa fa-image"></i> GALERIA</button>
+                            <button type="button" class="btn btn-sm btn-outline-success" :disabled="emptyStore" v-on:click="openGallery"><i class="fa fa-image"></i> 
+                                {{textGallery}}
+                            </button>
                         </span>
                     </h4>
                     <p class="card-text">clique no botão abaixo e selecione a imagem que deseja "pegar emprestado" !</p>
@@ -35,21 +37,12 @@
     </div>
 </div>
 
-<!-- componentes -->
-<script type="text/x-template" id="gallery">
-    <transition name="fade" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-        <div>Galeria</div>
-    </transition>
-</script>
-<!-- end - componentes -->
-
 <!-- <script src="../vendor/vue.min.js"></script> -->
 <script src="../vendor/vue.js"></script>
 <script src="../vendor/jquery.min.js"></script>
 <script src="../vendor/moment.js"></script>
 <script src="../vendor/pt-br.js"></script>
 
-<script src="../scripts/components/gallery-component.js"></script>
 <script src="../scripts/popup.js"></script>
 <!-- <script src="../dist/popup.min.js"></script> -->
 </body>

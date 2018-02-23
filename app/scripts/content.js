@@ -5,6 +5,15 @@
 			imageChoice();
 			insertAlert();
 		}
+
+		if( request.message === "insert_message_gallery" ) {
+			insertMessage('message', 'Imagem enviada para galeria!');
+		}
+
+		if( request.message === "insert_message_on_gallery" ) {
+			insertMessage('message', 'Imagem já está na galeria!');
+		}
+
 	});
 
 	let queueImage = [];
@@ -30,41 +39,51 @@
 
 				// console.log( $(this).closest() )
 
+				/* send to background.js */
 
-				let store = localStorage.getItem('Images-Gallery');
-
-				if( store == '' || store == undefined || store == null ) {
-					let arr = [];
-					arr.push(path)
-					localStorage.setItem('Images-Gallery', arr)
-					insertMessage('message', 'Imagem enviada para galeria!');
-					window.open(path);
-					return false;
-				}
-
-				let arrayStore = store.split(',');
-				console.log(arrayStore)
-
-
-				/* verify if link exist on storage */
-				let hasLinkOnStorage = false; 
-				arrayStore.filter(function(value, index) {
-					if( value == path ) {
-						hasLinkOnStorage = true;
-						return false;
-					}
+				chrome.runtime.sendMessage({link: path}, function(response) {
+					console.log('Send to background.js' + path);
 				});
 
 
-				if( !hasLinkOnStorage ) {
-					arrayStore.push(path)
-					localStorage.setItem('Images-Gallery', arrayStore);
-					insertMessage('message', 'Imagem enviada para galeria!');
-					window.open(path);
-					return false;
-				}
+				// let store = localStorage.getItem('Images-Gallery');
 
-				insertMessage('message', 'Imagem já está na galeria!');
+				// if( store == '' || store == undefined || store == null ) {
+				// 	let arr = [];
+				// 	arr.push(path)
+
+				// 	localStorage.setItem('Images-Gallery', arr);
+				// 	chrome.storage.local.set(arr, function(){});
+				// 	insertMessage('message', 'Imagem enviada para galeria!');
+				// 	window.open(path);
+				// 	return false;
+				// }
+
+				// let arrayStore = store.split(',');
+				// console.log(arrayStore)
+
+
+				// /* verify if link exist on storage */
+				// let hasLinkOnStorage = false; 
+				// arrayStore.filter(function(value, index) {
+				// 	if( value == path ) {
+				// 		hasLinkOnStorage = true;
+				// 		return false;
+				// 	}
+				// });
+
+
+				// if( !hasLinkOnStorage ) {
+				// 	arrayStore.push(path)
+				// 	localStorage.setItem('Images-Gallery', arrayStore);
+				// 	chrome.storage.local.set(arrayStore, function(){});
+				// 	insertMessage('message', 'Imagem enviada para galeria!');
+				// 	window.open(path);
+				// 	return false;
+				// }
+
+				// window.open(path);
+				// insertMessage('message', 'Imagem já está na galeria!');
 
 
 			}

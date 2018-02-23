@@ -1,19 +1,24 @@
 (function() {
 
 	Vue.component('gallery', {
-		template: '#gallery',
+		template: '#gallery-component',
 		name: 'gallery',
 		props: {
-			images: Array,
+			images: '',
 			loading: Boolean
 		},
 		data() {
 			return {
-
+				gridImages: ''
 			}
 		},
 		mounted() {
 
+		},
+		computed: {
+			splitImages() {
+				return this.images.split(',');
+			}
 		},
 		methods: {
 

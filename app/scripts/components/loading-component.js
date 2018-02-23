@@ -4,7 +4,8 @@
 		template: '#loading',
 		name: 'loading',
 		props: {
-			loading: Boolean
+			loading: Boolean,
+			textload: String
 		},
 		data() {
 			return {

@@ -41,13 +41,41 @@ body .alert-on {
 }
 
 /* GALLERY */
-#gallery {
+#gallery body, #getImage body {
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+#gallery .box-loading {
+	position: absolute;
+	top: 35%;
+	text-align: center; 
+}
+
+#gallery .box-gallery {
 
 }
-.fade-enter-active, .fade-leave-active {
-	transition: opacity 0.25s ease-out;
+
+#gallery .box-gallery .box-gallery_item {
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
 }
 
-.fade-enter, .fade-leave-to {
-	opacity: 0;
+
+#gallery .box-gallery .box-gallery_item:hover img {
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+	transform: scale(1.1);
+}
+
+#gallery .box-gallery .box-gallery_item a img{
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
 }

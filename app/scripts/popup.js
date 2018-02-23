@@ -4,7 +4,6 @@
 		name: 'Get-Image',
 		el: '#getImage',
 		data: {
-			title: 'OLAR',
 			emptyStore: true,
 			textGallery: ''
 		},

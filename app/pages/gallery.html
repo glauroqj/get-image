@@ -16,21 +16,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <loading :loading="load">
-                        <div slot="body-loading">
-                            <h3>Carregando...</h3>
-                        </div>
-                    </loading>
-<!--                     <gallery :loading="!load">
-                        <div slot="grid-gallery">
-                            <div class="row">
-                                <h2>Galeria</h2>
-                            </div>
-                            <div class="row">
-
-                            </div>
-                        </div>
-                    </gallery> -->
+                    <loading :loading="load" textload="Carregando..."></loading>
+                    <gallery :loading="load" :images="storageImage"></gallery>
                 </div>
             </div>
         </div>
@@ -39,16 +26,27 @@
     <!-- componentes -->
     <script type="text/x-template" id="loading">
         <transition name="fade" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-            <div v-if="loading">
-                <slot name="body-loading"></slot>
+            <div v-show="loading" class="box-loading">
+                <h2>{{textload}}</h2>
             </div>
         </transition>
     </script>
 
-    <script type="text/x-template" id="gallery">
+    <script type="text/x-template" id="gallery-component">
         <transition name="fade" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
             <div v-if="!loading">
-                <slot name="grid-gallery"></slot>
+                <div class="box-gallery">
+                    <div class="row">
+                        <h2>Galeria</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 box-gallery_item mb-3" v-for="item in splitImages">
+                            <a :href="item" target="new">
+                                <img class="img-responsive rounded w-75" :src="item">
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </transition>
     </script>

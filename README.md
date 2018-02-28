@@ -1,8 +1,8 @@
 # Get Image
 
-- Helping people to get images on google search! =]
+- Easy way to get image on every website you need! =]
 
-* Baby steps
+## Baby steps
 
 1- Click on the extension icon and click on "activate extension"
 
@@ -14,7 +14,7 @@
 
 5- You can visit your gallery on popup extension, click on button "gallery", if is available.
 
-------------- Coming soon -------------
+### Coming soon
 
 - size of images on gallery
 

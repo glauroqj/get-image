@@ -19,7 +19,6 @@
     },
     "default_title": "Get Image",
     "default_popup": "dist/popup.html"
-    // "default_popup": "dist/popup.html"
   },
   "author": "Glauro Quintão Juliani",
   "content_scripts": [
@@ -27,7 +26,6 @@
       "js": [
         "vendor/jquery.min.js", 
         "vendor/vue.min.js",
-        // "vendor/vue.js",  
         "vendor/moment.js",
         "dist/content.min.js"
       ],

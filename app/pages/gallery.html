@@ -3,7 +3,7 @@
 
 <head lang="pt-br">
     <meta charset="UTF-8">
-    <title>Galeria - Get Image</title>
+    <title>Get Image - Gallery</title>
     <link rel="stylesheet" href="../vendor/bootstrap.min.css">
     <link rel="stylesheet" href="../vendor/base.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <loading :loading="load" textload="Carregando..."></loading>
+                    <loading :loading="load" textload="Loading gallery..."></loading>
                     <gallery :loading="load" :images="storageImage"></gallery>
                 </div>
             </div>
@@ -37,7 +37,7 @@
             <div v-if="!loading">
                 <div class="box-gallery">
                     <div class="row">
-                        <h2>Galeria</h2>
+                        <h2>Gallery</h2>
                     </div>
                     <div class="row">
                         <div class="col-3 box-gallery_item mb-3" v-for="item in splitImages">

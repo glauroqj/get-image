@@ -5,18 +5,20 @@
 		el: '#getImage',
 		data: {
 			emptyStore: true,
-			textGallery: ''
+			textGallery: '',
+			countImages: ''
 		},
 		mounted() {
 			let store = localStorage.getItem('Images-Gallery');
 			console.log(store)
 			if( store == '' || store == undefined || store == null ) {
 				this.emptyStore = true;
-				this.textGallery = 'Galeria vazia'
+				this.textGallery = 'Empty gallery'
 				return false
 			}
+			this.countImages = store.split(',');
 			this.emptyStore = false;
-			this.textGallery = 'Galeria'
+			this.textGallery = 'Gallery'
 
 		},
 		methods: {

@@ -7,11 +7,11 @@
 		}
 
 		if( request.message === "insert_message_gallery" ) {
-			insertMessage('message', 'Imagem enviada para galeria!');
+			insertMessage('message', 'Image sended to gallery!');
 		}
 
 		if( request.message === "insert_message_on_gallery" ) {
-			insertMessage('message', 'Imagem já está na galeria!');
+			insertMessage('message', 'Image on gallery!');
 		}
 
 	});
@@ -141,7 +141,7 @@
 	}
 
 	function insertAlert() {
-		let alertOn = $('<div class="alert-on">Extensão Get-Image Ativa</div>');
+		let alertOn = $('<div class="alert-on">Get Image Active</div>');
 
 		if( $('.alert-on').html() ) {
 			return false;

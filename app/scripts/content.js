@@ -20,6 +20,9 @@
 
 	function imageChoice() {
 
+		/* insert global class */
+		$('body').addClass('find-all-images');
+
 		$('body').on('click', 'img', function(event) {
 			event.preventDefault();
 			/* Act on the event */

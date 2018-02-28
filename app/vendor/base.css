@@ -8,12 +8,14 @@ body .message-global-image {
 	bottom: 30px;
 	left: -350px;
 	width: 300px;
-	background: #323232;
+	background: #ff9800;
 	color: #ffffff;
 	padding: 15px;
 	font-size: 25px;
 	border-radius: 15px;
 	z-index: 99999999;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 body .alert-on {
@@ -21,7 +23,7 @@ body .alert-on {
 	-moz-transition: all 0.5s ease-out;
 	-o-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
-	background-color: #2ecc71;
+	background-color: #4CAF50;
 	color: #fff;
 	font-size: 20px;
 	position: fixed;
@@ -33,7 +35,20 @@ body .alert-on {
 	border-radius: 5px;
 	position: fixed;
 	z-index: 99999999999;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 } 
+
+body.find-all-images img:hover {
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+	content: 'Click on the image and send to gallery';
+	background-color: #000;
+	color: #fff;
+	font-size: 10px;
+}
 
 .card {
 	margin-bottom: 0px;
@@ -65,7 +80,7 @@ body .alert-on {
 }
 
 
-#gallery .box-gallery .box-gallery_item:hover img {
+#gallery .box-gallery .box-gallery_item img:hover {
 	-webkit-transition: all 0.5s ease-out;
 	-moz-transition: all 0.5s ease-out;
 	-o-transition: all 0.5s ease-out;

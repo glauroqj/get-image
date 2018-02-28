@@ -20,14 +20,14 @@
                     <h4 class="card-title mb-3">
                         Hello!
                         <span class="pull-right">
-                            <button type="button" class="btn btn-sm btn-outline-success" :disabled="emptyStore" v-on:click="openGallery"><i class="fa fa-image"></i> 
-                                {{textGallery}} <span class="badge">{{countImages.length}}</span>
+                            <button type="button" class="btn btn-sm btn-outline-primary" :disabled="emptyStore" v-on:click="openGallery"><i class="fa fa-image"></i> 
+                                {{textGallery}} <span class="badge badge-light ml-2">{{countImages.length}}</span>
                             </button>
                         </span>
                     </h4>
                     <p class="card-text">Activate the extension and click on the image, all the clicked images are sent to your gallery!</p>
                     <p class="mt-4">
-                        <button type="button" class="btn btn-block btn-primary" v-on:click="selectImage">Active Extension</button>
+                        <button type="button" class="btn btn-block btn-success" v-on:click="selectImage">Active Extension</button>
                     </p>
                 </div>
 

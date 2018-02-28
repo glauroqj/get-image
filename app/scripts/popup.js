@@ -35,7 +35,7 @@
 			openGallery() {
 
 				chrome.tabs.create({
-					url: chrome.extension.getURL('pages/gallery.html'),
+					url: chrome.extension.getURL('dist/gallery.html'),
 					active: true
 				}, function(tab) {
 					chrome.windows.create({

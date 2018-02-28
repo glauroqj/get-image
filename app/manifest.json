@@ -18,7 +18,7 @@
       "38": "images/get-image-20.png"
     },
     "default_title": "Get Image",
-    "default_popup": "pages/popup.html"
+    "default_popup": "dist/popup.html"
     // "default_popup": "dist/popup.html"
   },
   "author": "Glauro Quintão Juliani",

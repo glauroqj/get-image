@@ -22,6 +22,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015-native-modules": "^6.9.4",
+    "copy-webpack-plugin": "^4.4.2",
     "css-loader": "^0.28.7",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",

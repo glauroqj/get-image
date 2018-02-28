@@ -2,14 +2,14 @@
   "content_security_policy": "script-src 'self' https://ru.aliexpress.com/ 'unsafe-eval'; object-src 'self'","name": "Get Image",
   "short_name": "Get Image",
   "description": "Helping people to find images on web",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "icons": {
     "16": "images/get-image-20.png",
     "128": "images/get-image-128.png"
   },
   "background": {
-    "scripts": ["vendor/moment.js", "vendor/pt-br.js", "scripts/background.js", "dist/background.min.js"],
+    "scripts": ["vendor/moment.js", "vendor/pt-br.js", "dist/background.min.js"],
     "persistent": true
   },
   "browser_action": {
@@ -27,9 +27,9 @@
       "js": [
         "vendor/jquery.min.js", 
         "vendor/vue.min.js",
-        "vendor/vue.js",  
+        // "vendor/vue.js",  
         "vendor/moment.js",
-        "scripts/content.js"
+        "dist/content.min.js"
       ],
       "css": [
         "vendor/base.css"

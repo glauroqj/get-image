@@ -19,7 +19,7 @@
 			}
 			this.countImages = store.split(',');
 			this.emptyStore = false;
-			this.textGallery = 'Gallery'
+			this.textGallery = 'Gallery';
 
 		},
 		methods: {

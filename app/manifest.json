@@ -1,7 +1,7 @@
 {
   "content_security_policy": "script-src 'self' https://ru.aliexpress.com/ 'unsafe-eval'; object-src 'self'","name": "Get Image",
   "short_name": "Get Image",
-  "description": "Helping people to find images on web",
+  "description": "Easy way to get image on every website you need!",
   "version": "0.0.2",
   "manifest_version": 2,
   "icons": {

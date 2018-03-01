@@ -14,8 +14,10 @@
 
 5- You can visit your gallery on popup extension, click on button "gallery", if is available.
 
-### Coming soon
+## Coming soon
 
 - size of images on gallery
 
 - maybe, a little grid of gallery on popup
+
+- get images on instagram web

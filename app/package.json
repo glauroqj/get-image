@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack --colors --progress",
-    "watch": "npm run build"
+    "dev": "webpack --colors --progress --watch",
+    "build": "webpack --colors --progress"
   },
   "repository": {
     "type": "git",

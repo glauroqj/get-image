@@ -9,15 +9,18 @@ const WebpackSynchronizableShellPlugin = require('webpack-synchronizable-shell-p
 
 
 module.exports = {
-	// devServer: {
-	// 	historyApiFallback: true,
-	// 	hot: true,
-	// 	inline: true,
-	// 	progress: true,
-	// 	contentBase: '../app/',
-	// 	port: 8080,
-	// },
-	watch: false,
+	devServer: {
+		historyApiFallback: true,
+		hot: true,
+		inline: true,
+		progress: true,
+		contentBase: [
+			path.join(__dirname, "scripts/"), 
+			path.join(__dirname, "images/"), 
+			path.join(__dirname, "pages/")
+		],
+		port: 8080,
+	},
 	entry: {
 		popup: './scripts/popup.js',
 		gallery: './scripts/gallery.js',
@@ -32,6 +35,7 @@ module.exports = {
 		path: path.join(__dirname, './dist'),
 		filename: '[name].min.js'
 	},
+	watch: true,
 	module: {
 		loaders: [
 		{

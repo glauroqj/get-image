@@ -3,8 +3,21 @@ const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackOnBuildPlugin = require('on-build-webpack');
+const SimpleProgressWebpackPlugin = require( 'simple-progress-webpack-plugin' );
+const WebpackSynchronizableShellPlugin = require('webpack-synchronizable-shell-plugin');
+
 
 module.exports = {
+	// devServer: {
+	// 	historyApiFallback: true,
+	// 	hot: true,
+	// 	inline: true,
+	// 	progress: true,
+	// 	contentBase: '../app/',
+	// 	port: 8080,
+	// },
+	watch: false,
 	entry: {
 		popup: './scripts/popup.js',
 		gallery: './scripts/gallery.js',
@@ -19,7 +32,6 @@ module.exports = {
 		path: path.join(__dirname, './dist'),
 		filename: '[name].min.js'
 	},
-	watch: true,
 	module: {
 		loaders: [
 		{
@@ -34,38 +46,57 @@ module.exports = {
 		}
 		],
 	},
-	plugins: [		
+	plugins: [
+	new SimpleProgressWebpackPlugin(),
 	new webpack.optimize.UglifyJsPlugin({		
-		parallel: true,
+		parallel: false,
 		mangle: false,	
 		compress: { warnings: false },		
 		output: { comments: false }		
 	}),
-	new HtmlWebpackPlugin({
-		// filename: 'popup.html',
-		// template: './pages/popup.html',
-		// minify: {
-		// 	collapseWhitespace: true,
-		// 	removeComments: true,
-		// 	removeRedundantAttributes: true,
-		// 	removeScriptTypeAttributes: true,
-		// 	removeStyleLinkTypeAttributes: true
-		// },
-		// filename: 'gallery.html',
-		// template: './pages/gallery.html',
-		// minify: {
-		// 	collapseWhitespace: true,
-		// 	removeComments: true,
-		// 	removeRedundantAttributes: true,
-		// 	removeScriptTypeAttributes: true,
-		// 	removeStyleLinkTypeAttributes: true
-		// }
-	}),
 	new CopyWebpackPlugin([
 		{from:'./pages/popup.html', to:''},
-		{from:'./pages/gallery.html', to:''}
-		// {from:'./images', to:'images'}
-		// {from:'manifest.json', to:''},
+		{from:'./pages/gallery.html', to:''},
+		{from:'./manifest.json', to:''},
+		{from:'./images', to:'./images'},
+		{from:'./vendor', to:'./vendor'}
+		]),
+	new WebpackOnBuildPlugin(function(stats) {
+
+	}),
+	new CopyWebpackPlugin([
+		{from:'./dist/popup.html', to:'./prod/dist'},
+		{from:'./dist/gallery.html', to:'./prod/dist'},
+		{from:'./dist/manifest.json', to:'./prod'},
+		{from:'./dist/images', to:'./prod/images'},
+		{from:'./dist/vendor', to:'./prod/vendor'},
+		{from:'./dist/background.min.js', to:'./prod/dist'},
+		{from:'./dist/popup.min.js', to:'./prod/dist'},
+		{from:'./dist/components.min.js', to:'./prod/dist'},
+		{from:'./dist/content.min.js', to:'./prod/dist'},
+		{from:'./dist/gallery.min.js', to:'./prod/dist'}
 		])
 	]
 };
+
+
+// new HtmlWebpackPlugin({
+// 	// filename: 'popup.html',
+// 	// template: './pages/popup.html',
+// 	// minify: {
+// 	// 	collapseWhitespace: true,
+// 	// 	removeComments: true,
+// 	// 	removeRedundantAttributes: true,
+// 	// 	removeScriptTypeAttributes: true,
+// 	// 	removeStyleLinkTypeAttributes: true
+// 	// },
+// 	// filename: 'gallery.html',
+// 	// template: './pages/gallery.html',
+// 	// minify: {
+// 	// 	collapseWhitespace: true,
+// 	// 	removeComments: true,
+// 	// 	removeRedundantAttributes: true,
+// 	// 	removeScriptTypeAttributes: true,
+// 	// 	removeStyleLinkTypeAttributes: true
+// 	// }
+// }),

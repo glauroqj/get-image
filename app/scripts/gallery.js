@@ -12,7 +12,7 @@
 			let store = localStorage.getItem('Images-Gallery');
 			if( store == '' || store == undefined || store == null ) {
 				this.emptyStore = true;
-				this.textGallery = 'Galeria vazia'
+				this.textGallery = 'Empty gallery'
 				this.removeLoad();
 				return false
 			}

@@ -7,11 +7,11 @@
 		}
 
 		if( request.message === "insert_message_gallery" ) {
-			insertMessage('message', 'Image sended to gallery!');
+			insertMessage('message', 'sended to gallery! Image in another tab');
 		}
 
 		if( request.message === "insert_message_on_gallery" ) {
-			insertMessage('message', 'Image on gallery!');
+			insertMessage('message', 'on gallery! Image in another tab');
 		}
 
 	});

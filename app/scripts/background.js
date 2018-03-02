@@ -18,7 +18,8 @@
 				});
 			});
 
-			window.open(request.link);
+			// window.open(request.link);
+			chrome.tabs.create({url: request.link, active: false});
 			return false;
 		}
 
@@ -47,7 +48,8 @@
 				});
 			});
 
-			window.open(request.link);
+			// window.open(request.link);
+			chrome.tabs.create({url: request.link, active: false});
 			return false;
 		}
 
@@ -57,7 +59,8 @@
 				console.log(response);
 			});
 		});
-		window.open(request.link);
+		// window.open(request.link);
+		chrome.tabs.create({url: request.link, active: false});
 
 	});
 

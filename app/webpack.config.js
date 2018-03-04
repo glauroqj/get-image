@@ -15,12 +15,13 @@ module.exports = {
 		inline: true,
 		progress: true,
 		contentBase: [
-			path.join(__dirname, "scripts/"), 
+			path.join(__dirname, "scripts/*.js"), 
 			path.join(__dirname, "images/"), 
-			path.join(__dirname, "pages/")
+			path.join(__dirname, "pages/*.html")
 		],
 		port: 8080,
 	},
+	watch: true,
 	entry: {
 		popup: './scripts/popup.js',
 		gallery: './scripts/gallery.js',
@@ -35,7 +36,6 @@ module.exports = {
 		path: path.join(__dirname, './dist'),
 		filename: '[name].min.js'
 	},
-	watch: true,
 	module: {
 		loaders: [
 		{

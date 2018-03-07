@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <loading :loading="load" textload="Loading gallery..."></loading>
-                    <gallery :loading="load" :images="storageImage"></gallery>
+                    <gallery :loading="load" :images="storageImage" :empty="emptyStore"></gallery>
                 </div>
             </div>
         </div>
@@ -38,12 +38,16 @@
                     <div class="row mb-4 mt-4">
                         <h2>Gallery</h2>
                     </div>
-                    <div class="row">
+                    <div class="row" v-if="!empty">
                         <div class="col-3 box-gallery_item mb-3 animated fadeIn" v-for="item in images">
                             <a :href="item" target="new">
                                 <img class="img-responsive rounded w-75" :src="item">
                             </a>
                         </div>
+                    </div>
+                    <!-- placeholder empty gallery -->
+                    <div class="row" v-else>
+                        <h5>Sorry, empty gallery! :(</h5>
                     </div>
                 </div>
             </div>

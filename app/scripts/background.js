@@ -1,5 +1,12 @@
 (function() {
 
+	/* reset all localstorage, to implementation paths with base64 */
+	const today = moment().format('DD/MM/YYYY');
+	if( today == '08/03/2018' ) {
+		console.log('Reset localStorage, update to path encode64: 08/03/2018')
+		localStorage.removeItem('Images-Gallery');
+	}
+
 	chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 		let store = localStorage.getItem('Images-Gallery');

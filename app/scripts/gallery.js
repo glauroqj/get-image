@@ -9,9 +9,21 @@
 			storageImage: ''
 		},
 		mounted() {
+			var vm = this;
 			let store = localStorage.getItem('Images-Gallery');
 
 			/* encode window.btoa(request.link) */
+
+			console.log( store )
+
+			if ( store == null ) {
+				setTimeout( ()=> {
+					/* show empty gallery */
+					this.emptyStore = true;
+					this.load = false;
+					return false;
+				}, 800);
+			}
 
 			if( store == '' || store == undefined || store == null ) {
 				this.emptyStore = true;

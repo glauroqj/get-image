@@ -5,6 +5,7 @@
 		name: 'gallery',
 		props: {
 			images: '',
+			empty: '',
 			loading: Boolean
 		},
 		data() {

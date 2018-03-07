@@ -2,7 +2,7 @@
   "content_security_policy": "script-src 'self' https://ru.aliexpress.com/ 'unsafe-eval'; object-src 'self'","name": "Get Image",
   "short_name": "Get Image",
   "description": "Easy way to get image on every website you need!",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "manifest_version": 2,
   "icons": {
     "16": "images/get-image-20.png",
@@ -27,6 +27,7 @@
         "vendor/jquery.min.js", 
         "vendor/vue.min.js",
         "vendor/moment.js",
+        "vendor/pt-br.js",
         "dist/content.min.js"
       ],
       "css": [
@@ -38,8 +39,6 @@
     }
   ],
   "permissions": [
-    "identity",
-    "identity.email",
     "activeTab",
     "tabs",
     "storage",
@@ -47,8 +46,6 @@
     "alarms",
     "notifications",
     "background",
-    "clipboardWrite",
-    "clipboardRead",
     "webRequest",
     "http://*/*",
     "https://*/*"

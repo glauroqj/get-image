@@ -16,9 +16,7 @@
 
 		},
 		computed: {
-			splitImages() {
-				return this.images.split(',');
-			}
+
 		},
 		methods: {
 

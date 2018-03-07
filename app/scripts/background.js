@@ -2,13 +2,15 @@
 
 	chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
-		console.log(request.link)
-
 		let store = localStorage.getItem('Images-Gallery');
 
 		if( store == '' || store == undefined || store == null ) {
 			let arr = [];
-			arr.push(request.link)
+			/* convert path to base64 */
+			let encode = window.btoa(request.link)
+			console.log(request.link)
+			console.log(encode)
+			arr.push(encode)
 			localStorage.setItem('Images-Gallery', arr);
 
 			// insertMessage('message', 'Imagem enviada para galeria!');
@@ -23,14 +25,17 @@
 			return false;
 		}
 
+		/* get new store and create encode again */
 		let arrayStore = store.split(',');
+		let encode = window.btoa(request.link);
 		console.log(arrayStore)
 
 
 		/* verify if link exist on storage */
 		let hasLinkOnStorage = false; 
 		arrayStore.filter(function(value, index) {
-			if( value == request.link ) {
+			console.log(value, encode)
+			if( value == encode ) {
 				hasLinkOnStorage = true;
 				return false;
 			}
@@ -38,7 +43,10 @@
 
 
 		if( !hasLinkOnStorage ) {
-			arrayStore.push(request.link)
+			/* convert path to base64 */
+			let encode = window.btoa(request.link)
+			console.log(request.link)
+			arrayStore.push(encode)
 			localStorage.setItem('Images-Gallery', arrayStore);
 
 			// insertMessage('message', 'Imagem enviada para galeria!');

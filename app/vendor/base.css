@@ -50,6 +50,14 @@ body.find-all-images img:hover {
 	font-size: 10px;
 }
 
+body.find-all-images img {
+	-webkit-user-select: initial;
+	-moz-user-select: initial;
+	-ms-user-select: initial;
+	user-select: initial;
+	z-index: 999;
+}
+
 .card {
 	margin-bottom: 0px;
 	min-width: 350px;

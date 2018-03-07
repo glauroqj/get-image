@@ -20,4 +20,4 @@
 
 - maybe, a little grid of gallery on popup
 
-- get images on instagram web
+- get images on instagram web - DONE!

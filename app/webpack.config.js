@@ -15,6 +15,7 @@ module.exports = {
 		inline: true,
 		progress: true,
 		contentBase: [
+			path.join(__dirname, "vendor/*.css"),
 			path.join(__dirname, "scripts/*.js"), 
 			path.join(__dirname, "images/"), 
 			path.join(__dirname, "pages/*.html")

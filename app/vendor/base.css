@@ -96,6 +96,7 @@ body.find-all-images img {
 	-moz-transition: all 0.5s ease-out;
 	-o-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
+	position: relative;
 }
 
 
@@ -112,4 +113,21 @@ body.find-all-images img {
 	-moz-transition: all 0.5s ease-out;
 	-o-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
+}
+
+#gallery .box-gallery .box-gallery_remove {
+	position: absolute;
+	bottom: 5px;
+	left: 20px;
+}
+
+#gallery .box-gallery .box-gallery_remove button {
+	font-size: 15px;
+	padding: 10px 15px;
+	border-radius: 25px;
+}
+
+/* MODAL */
+.modal-custom {
+	display: block;
 }

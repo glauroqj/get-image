@@ -18,6 +18,7 @@
                 <div class="col-xs-12">
                     <loading :loading="load" textload="Loading gallery..."></loading>
                     <gallery :loading="load" :images="storageImage" :empty="emptyStore"></gallery>
+                    <modal :show="showModal" :id="imageID"></modal>
                 </div>
             </div>
         </div>
@@ -39,10 +40,15 @@
                         <h2>Gallery</h2>
                     </div>
                     <div class="row" v-if="!empty">
-                        <div class="col-3 box-gallery_item mb-3 animated fadeIn" v-for="item in images">
+                        <div class="col-3 box-gallery_item mb-3 animated fadeIn" v-for="(item, index) in images" index="index">
                             <a :href="item" target="new">
                                 <img class="img-responsive rounded w-75" :src="item">
                             </a>
+                            <div class="box-gallery_remove">
+                                <button class="btn btn-danger btn-xs" v-on:click="galleryCallModal(index)">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <!-- placeholder empty gallery -->
@@ -54,11 +60,34 @@
         </transition>
     </script>
 
-    <script src="../vendor/vue.min.js"></script>
-    <!-- <script src="../vendor/vue.js"></script> -->
-    <script src="../vendor/jquery.min.js"></script>
-    <script src="../vendor/moment.js"></script>
-    <script src="../vendor/pt-br.js"></script>
+    <script type="text/x-template" id="modal-component">
+        <transition name="fade" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+            <div class="modal modal-custom" v-if="show">
+                <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Remove Image?</h5>
+                            <button type="button" class="close" v-on:click="show = false"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Do you want to remove the image?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" v-on:click="show = false">Cancel</button>
+                            <button type="button" class="btn btn-success" v-on:click="confirmToRemove">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </script>
+
+<script src="../vendor/vue.min.js"></script>
+<!-- <script src="../vendor/vue.js"></script> -->
+<script src="../vendor/jquery.min.js"></script>
+<script src="../vendor/bootstrap.min.js"></script>
+<script src="../vendor/moment.js"></script>
+<script src="../vendor/pt-br.js"></script>
 
 <!--     <script src="../scripts/components/loading-component.js"></script>
     <script src="../scripts/components/gallery-component.js"></script> -->

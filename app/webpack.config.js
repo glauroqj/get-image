@@ -31,6 +31,7 @@ module.exports = {
 		components: [
 		'./scripts/components/gallery-component.js',
 		'./scripts/components/loading-component.js',
+		'./scripts/components/modal-component.js'
 		]
 	},
 	output: {

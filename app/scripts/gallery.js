@@ -6,7 +6,9 @@
 		data: {
 			load: true,
 			emptyStore: true,
-			storageImage: ''
+			storageImage: '',
+			imageID: '',
+			showModal: false
 		},
 		mounted() {
 			var vm = this;
@@ -33,6 +35,14 @@
 			}
 			this.emptyStore = false;
 			this.removeLoad();
+
+			/* ON */
+			this.$root.$on('call_modal', (ID)=> {
+				vm.showModalConfirm(ID);
+			})
+			this.$root.$on('remove_image', ()=> {
+				vm.removeImageFromStorage();
+			});
 		},
 		methods: {
 			removeLoad() {
@@ -68,6 +78,21 @@
 					// });
 
 				}, 1500)
+			},
+			showModalConfirm(ID) {
+				console.log('Lets show modal confirm! '+ID);
+				this.imageID = ID;
+				this.showModal = true;
+			},
+			removeImageFromStorage() {
+				console.log('REMOVE THIS INDEX: '+this.imageID)
+				let store = localStorage.getItem('Images-Gallery');
+				let array = store.split(',');
+				array.splice(this.imageID, 1);
+
+				/* new array to localstorage */
+				console.log(array)
+				this.showModal = false;
 			}
 		}
 	});

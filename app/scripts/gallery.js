@@ -86,12 +86,17 @@
 			},
 			removeImageFromStorage() {
 				console.log('REMOVE THIS INDEX: '+this.imageID)
+				/* remove from DOM */
+				this.storageImage.splice(this.imageID, 1);
+
+				/* remove from localstorage */
 				let store = localStorage.getItem('Images-Gallery');
 				let array = store.split(',');
 				array.splice(this.imageID, 1);
 
 				/* new array to localstorage */
 				console.log(array)
+				localStorage.setItem('Images-Gallery', array);
 				this.showModal = false;
 			}
 		}

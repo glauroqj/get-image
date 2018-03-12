@@ -2,7 +2,7 @@
   "content_security_policy": "script-src 'self' https://ru.aliexpress.com/ 'unsafe-eval'; object-src 'self'","name": "Get Image",
   "short_name": "Get Image",
   "description": "Easy way to get image on every website you need!",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "manifest_version": 2,
   "icons": {
     "16": "images/get-image-20.png",
@@ -26,6 +26,7 @@
       "js": [
         "vendor/jquery.min.js", 
         "vendor/vue.min.js",
+        "vendor/bootstrap.min.js",
         "vendor/moment.js",
         "vendor/pt-br.js",
         "dist/content.min.js"

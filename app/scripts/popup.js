@@ -7,7 +7,7 @@
 			emptyStore: true,
 			textGallery: '',
 			countImages: '',
-			version: '0.0.5'
+			version: '0.0.6'
 		},
 		mounted() {
 			let store = localStorage.getItem('Images-Gallery');

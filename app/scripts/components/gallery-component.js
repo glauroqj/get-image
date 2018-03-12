@@ -20,7 +20,11 @@
 
 		},
 		methods: {
-
+			galleryCallModal(ID) {
+				/* emit to father gallery, show modal */
+				console.log('SHOW MODAL'+ ID);
+				this.$root.$emit('call_modal', ID);
+			}
 		}
 	});
 

@@ -21,3 +21,5 @@
 - maybe, a little grid of gallery on popup
 
 - get images on instagram web - DONE!
+
+- option to remove image on gallery - DONE!

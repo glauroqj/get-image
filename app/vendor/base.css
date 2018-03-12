@@ -108,7 +108,7 @@ body.find-all-images img {
 	transform: scale(1.1);
 }
 
-#gallery .box-gallery .box-gallery_item a img{
+#gallery .box-gallery .box-gallery_item a img {
 	-webkit-transition: all 0.5s ease-out;
 	-moz-transition: all 0.5s ease-out;
 	-o-transition: all 0.5s ease-out;

@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --watch --config webpack.dev.js",
-    "build": "webpack --colors --progress"
+    "build": "sudo webpack --progress --config webpack.prod.js"
   },
   "repository": {
     "type": "git",

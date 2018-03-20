@@ -7,7 +7,6 @@ const WebpackOnBuildPlugin = require('on-build-webpack');
 const SimpleProgressWebpackPlugin = require( 'simple-progress-webpack-plugin' );
 const WebpackSynchronizableShellPlugin = require('webpack-synchronizable-shell-plugin');
 
-
 module.exports = {
 	entry: {
 		popup: './scripts/popup.js',
@@ -21,7 +20,7 @@ module.exports = {
 		]
 	},
 	output: {
-		path: path.join(__dirname, './dist/scripts'),
+		path: path.join(__dirname, './dist/'),
 		filename: '[name].js'
 	},
 	module: {
@@ -39,6 +38,5 @@ module.exports = {
 		],
 	},
 	plugins: [
-	
 	]
 };

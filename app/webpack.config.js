@@ -7,6 +7,9 @@ const WebpackOnBuildPlugin = require('on-build-webpack');
 const SimpleProgressWebpackPlugin = require( 'simple-progress-webpack-plugin' );
 const WebpackSynchronizableShellPlugin = require('webpack-synchronizable-shell-plugin');
 
+/* DOCUMENTATION 
+https://webpack.js.org/guides/production/
+*/
 
 module.exports = {
 	devServer: {

@@ -4,8 +4,8 @@
 <head lang="pt-br">
     <meta charset="UTF-8">
     <title>Get Image - Gallery</title>
-    <link rel="stylesheet" href="../vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="../vendor/base.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue2-animate@1.0.4/dist/vue2-animate.min.css">
@@ -64,35 +64,35 @@
         <transition name="fade" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
             <div class="modal modal-custom" v-if="show">
                 <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title">Remove Image?</h5>
-                            <button type="button" class="close" v-on:click="show = false"><span aria-hidden="true">&times;</span></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Do you want to remove the image?</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-warning" v-on:click="show = false">Cancel</button>
-                            <button type="button" class="btn btn-success" v-on:click="confirmToRemove">Confirm</button>
-                        </div>
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Remove Image?</h5>
+                        <button type="button" class="close" v-on:click="show = false"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you want to remove the image?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" v-on:click="show = false">Cancel</button>
+                        <button type="button" class="btn btn-success" v-on:click="confirmToRemove">Confirm</button>
                     </div>
                 </div>
             </div>
-        </transition>
-    </script>
+        </div>
+    </transition>
+</script>
 
-<script src="../vendor/vue.min.js"></script>
-<!-- <script src="../vendor/vue.js"></script> -->
-<script src="../vendor/jquery.min.js"></script>
-<script src="../vendor/moment.js"></script>
-<script src="../vendor/pt-br.js"></script>
-
-<!--     <script src="../scripts/components/loading-component.js"></script>
-    <script src="../scripts/components/gallery-component.js"></script> -->
-    <!-- <script src="../scripts/gallery.js"></script> -->
-    <script src="../dist/components.min.js"></script>
-    <script src="../dist/gallery.min.js"></script>
+<!-- <script src="../vendor/vue.min.js"></script> -->
+<script src="vue.js"></script>
+<script src="jquery.min.js"></script>
+<script src="moment.js"></script>
+<script src="pt-br.js"></script>
+<script src="components/loading-component.js"></script>
+<script src="components/gallery-component.js"></script>
+<script src="components/modal-component.js"></script>
+<script src="gallery.js"></script>
+<!--     <script src="../dist/components.min.js"></script>
+    <script src="../dist/gallery.min.js"></script> -->
 </body>
 
 </html>

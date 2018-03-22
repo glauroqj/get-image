@@ -15,12 +15,9 @@ module.exports = merge(common, {
 		sourceMap: true
 	}),
 	new CopyWebpackPlugin([
-		{from:'./pages/popup.html', to:'/pages'},
-		{from:'./pages/gallery.html', to:'/pages'},
-		{from:'./scripts/*.js', to:'/scripts'},
 		{from:'./manifest.json', to:''},
-		{from:'./images', to:'./images'},
-		{from:'./vendor', to:'./vendor'}
+		{from:'./images', to:'images'},
+		{from:'./vendor', to:''}
 		])
 	]
 });

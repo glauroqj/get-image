@@ -1,14 +1,18 @@
 (function() {
-	
+	/* PropsData Vuejs - https://vuejs.org/v2/api/#propsData */
 	new Vue({
 		name: 'Gallery-GetImage',
 		el: '#gallery',
+		propsData: {
+			id: '',
+			show: false,
+		},
 		data: {
 			load: true,
 			emptyStore: true,
 			storageImage: '',
 			imageID: '',
-			showModal: false
+			showModal: false,
 		},
 		mounted() {
 			var vm = this;
@@ -39,7 +43,10 @@
 			/* ON */
 			this.$root.$on('call_modal', (ID)=> {
 				vm.showModalConfirm(ID);
-			})
+			});
+			this.$root.$on('close_modal', ()=> {
+				this.showModal = false;
+			});
 			this.$root.$on('remove_image', ()=> {
 				vm.removeImageFromStorage();
 			});

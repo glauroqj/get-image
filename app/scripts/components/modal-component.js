@@ -4,7 +4,7 @@
 		template: '#modal-component',
 		name: 'modal',
 		props: {
-			id: Number,
+			id: '',
 			show: Boolean
 		},
 		data() {
@@ -22,6 +22,9 @@
 			confirmToRemove() {
 				/* emit to father gallery, to remove image from storage */
 				this.$root.$emit('remove_image');
+			},
+			closeModal() {
+				this.$root.$emit('close_modal');
 			}
 		}
 	});

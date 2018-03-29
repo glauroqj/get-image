@@ -2,14 +2,14 @@
   "content_security_policy": "script-src 'self' https://ru.aliexpress.com/ 'unsafe-eval'; object-src 'self'","name": "Get Image",
   "short_name": "Get Image",
   "description": "Easy way to get image on every website you need!",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "manifest_version": 2,
   "icons": {
     "16": "images/get-image-20.png",
     "128": "images/get-image-128.png"
   },
   "background": {
-    "scripts": ["vendor/moment.js", "vendor/pt-br.js", "dist/background.min.js"],
+    "scripts": ["moment.js", "pt-br.js", "background.js"],
     "persistent": true
   },
   "browser_action": {
@@ -18,20 +18,20 @@
       "38": "images/get-image-20.png"
     },
     "default_title": "Get Image",
-    "default_popup": "dist/popup.html"
+    "default_popup": "popup.html"
   },
   "author": "Glauro Quintão Juliani",
   "content_scripts": [
     {
       "js": [
-        "vendor/jquery.min.js", 
-        "vendor/vue.min.js",
-        "vendor/moment.js",
-        "vendor/pt-br.js",
-        "dist/content.min.js"
+        "jquery.min.js", 
+        "vue.js",
+        "moment.js",
+        "pt-br.js",
+        "content.js"
       ],
       "css": [
-        "vendor/base.css"
+        "base.css"
       ],
       "matches": [
         "<all_urls>"
@@ -51,6 +51,6 @@
     "https://*/*"
   ],
   "web_accessible_resources": [
-    "vendor/bootstrap.min.css"
+    "bootstrap.min.css"
   ]
 }

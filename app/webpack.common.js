@@ -16,9 +16,9 @@ module.exports = {
 		gallery: './scripts/gallery.js',
 		background: './scripts/background.js',
 		content: './scripts/content.js',
-		gallery_component: './scripts/components/gallery-component.js',
-		loading_component: './scripts/components/loading-component.js',
-		modal_component: './scripts/components/modal-component.js',
+		gallery_component: './scripts/gallery-component.js',
+		loading_component: './scripts/loading-component.js',
+		modal_component: './scripts/modal-component.js',
 		vue: './vendor/vue.js',
 		moment: './vendor/moment.js'
 		// components: [

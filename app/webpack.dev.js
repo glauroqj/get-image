@@ -14,9 +14,13 @@ module.exports = merge(common, {
 		progress: true,
 		port: 8080,
 		open: true,
-		publicPath: 'scripts/',
+		publicPath: './',
 		watchContentBase: true,
-		contentBase: [path.join(__dirname, "pages"), path.join(__dirname, "scripts"), path.join(__dirname, "scripts/components/"), path.join(__dirname, "vendor")]
+		contentBase: [
+		path.join(__dirname, "/pages"), 
+		path.join(__dirname, "/scripts"), 
+		path.join(__dirname, "/vendor")
+		]
 	},
 	watch: true
 });

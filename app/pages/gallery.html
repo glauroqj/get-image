@@ -63,33 +63,33 @@
     <script type="text/x-template" id="modal-component">
         <transition name="fade" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
             <div class="modal modal-custom" v-if="show">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Remove Image?</h5>
-                        <button type="button" class="close" v-on:click="closeModal"><span aria-hidden="true">&times;</span></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Do you want to remove the image?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" v-on:click="closeModal">Cancel</button>
-                        <button type="button" class="btn btn-success" v-on:click="confirmToRemove">Confirm</button>
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Remove Image?</h5>
+                            <button type="button" class="close" v-on:click="closeModal"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Do you want to remove the image?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" v-on:click="closeModal">Cancel</button>
+                            <button type="button" class="btn btn-success" v-on:click="confirmToRemove">Confirm</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </transition>
-</script>
+        </transition>
+    </script>
 
 <!-- <script src="../vendor/vue.min.js"></script> -->
-<script src="vue.js"></script>
-<script src="jquery.min.js"></script>
-<script src="moment.js"></script>
-<script src="loading_component.js"></script>
-<script src="gallery_component.js"></script>
-<script src="modal_component.js"></script>
-<script src="gallery.js"></script>
+<script src="./vue.js"></script>
+<script src="./jquery.min.js"></script>
+<script src="./moment.js"></script>
+<script src="./loading_component.js"></script>
+<script src="./gallery_component.js"></script>
+<script src="./modal_component.js"></script>
+<script src="./gallery.js"></script>
 <!--     <script src="../dist/components.min.js"></script>
     <script src="../dist/gallery.min.js"></script> -->
 </body>

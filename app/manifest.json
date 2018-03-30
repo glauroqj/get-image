@@ -27,7 +27,6 @@
         "jquery.min.js", 
         "vue.js",
         "moment.js",
-        "pt-br.js",
         "content.js"
       ],
       "css": [

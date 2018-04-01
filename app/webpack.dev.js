@@ -7,7 +7,7 @@ module.exports = merge(common, {
 	devtool: 'inline-source-map',
 	devServer: {
 		// index: 'pages/popup.html',
-		openPage: 'popup.html, gallery.html',
+		openPage: 'popup.html',
 		historyApiFallback: false,
 		hot: true,
 		inline: true,

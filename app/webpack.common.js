@@ -5,8 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackOnBuildPlugin = require('on-build-webpack');
 const SimpleProgressWebpackPlugin = require( 'simple-progress-webpack-plugin' );
-const WebpackSynchronizableShellPlugin = require('webpack-synchronizable-shell-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
 	entry: {

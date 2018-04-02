@@ -12,13 +12,19 @@ module.exports = merge(common, {
 	new UglifyJSPlugin({
 		cache: false,
 		parallel: false,
-		sourceMap: true
+		sourceMap: false,
+		uglifyOptions: {
+			compress: true,
+			mangle: true
+		}
 	}),
 	new CopyWebpackPlugin([
 		{from:'./pages', to:''},
 		{from:'./manifest.json', to:''},
 		{from:'./images', to:'images'},
-		{from:'./vendor', to:''}
+		{from:'./vendor', to:''},
+		{from:'./vendor/vue.js', to:''},
+		{from:'./vendor/moment.js', to:''}
 		])
 	]
 });

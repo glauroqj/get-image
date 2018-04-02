@@ -9,7 +9,7 @@
     "128": "images/get-image-128.png"
   },
   "background": {
-    "scripts": ["moment.js", "pt-br.js", "background.js"],
+    "scripts": ["moment.js", "background.js"],
     "persistent": true
   },
   "browser_action": {
@@ -24,10 +24,10 @@
   "content_scripts": [
     {
       "js": [
-        "jquery.min.js", 
-        "vue.js",
-        "moment.js",
-        "content.js"
+        "/jquery.min.js",
+        "/vue.js",
+        "/moment.js",
+        "/content.js"
       ],
       "css": [
         "base.css"

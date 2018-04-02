@@ -7,7 +7,7 @@
 			emptyStore: true,
 			textGallery: '',
 			countImages: '',
-			version: '0.0.7'
+			version: '0.0.8'
 		},
 		mounted() {
 			let store = localStorage.getItem('Images-Gallery');
@@ -35,7 +35,7 @@
 			openGallery() {
 
 				chrome.tabs.create({
-					url: chrome.extension.getURL('dist/gallery.html'),
+					url: chrome.extension.getURL('gallery.html'),
 					active: true
 				}, function(tab) {
 					chrome.windows.create({

@@ -16,7 +16,8 @@ module.exports = {
 		content: './scripts/content.js',
 		gallery_component: './scripts/gallery_component.js',
 		loading_component: './scripts/loading_component.js',
-		modal_component: './scripts/modal_component.js'
+		modal_component: './scripts/modal_component.js',
+		store_popup: './scripts/store_popup.js'
 		// components: [
 		// './scripts/components/gallery-component.js',
 		// './scripts/components/loading-component.js',

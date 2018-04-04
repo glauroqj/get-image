@@ -87,7 +87,7 @@
   			// }
   		}, /* actions */
   		getters: {
-  			popupActualStateGetter: function() {
+  			popupActualStateGetter() {
   				return store_popup.state.popup;
   			}
   		}

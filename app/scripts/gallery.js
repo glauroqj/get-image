@@ -8,37 +8,34 @@
 			show: false,
 		},
 		data: {
-			load: true,
-			emptyStore: true,
 			storageImage: '',
 			imageID: '',
 			showModal: false,
 		},
 		mounted() {
 			var vm = this;
-			let store = localStorage.getItem('Images-Gallery');
+			/* init loading... */
+			window.store_gallery.dispatch('setLoading', true);
 
 			/* encode window.btoa(request.link) */
 
-			console.log( store )
+			// if ( store == null ) {
+			// 	setTimeout( ()=> {
+			// 		/* show empty gallery */
+			// 		this.emptyStore = true;
+			// 		this.load = false;
+			// 		return false;
+			// 	}, 800);
+			// }
 
-			if ( store == null ) {
-				setTimeout( ()=> {
-					/* show empty gallery */
-					this.emptyStore = true;
-					this.load = false;
-					return false;
-				}, 800);
-			}
-
-			if( store == '' || store == undefined || store == null ) {
-				this.emptyStore = true;
-				this.textGallery = 'Empty gallery'
-				this.removeLoad();
-				return false
-			}
-			this.emptyStore = false;
-			this.removeLoad();
+			// if( store == '' || store == undefined || store == null ) {
+			// 	this.emptyStore = true;
+			// 	this.textGallery = 'Empty gallery'
+			// 	this.removeLoad();
+			// 	return false
+			// }
+			// this.emptyStore = false;
+			// this.removeLoad();
 
 			/* ON */
 			this.$root.$on('call_modal', (ID)=> {
@@ -50,6 +47,17 @@
 			this.$root.$on('remove_image', ()=> {
 				vm.removeImageFromStorage();
 			});
+		},
+		created() {
+			window.store_gallery.dispatch('galleryLoadAction');
+		},
+		computed: {
+			loading() {
+				return window.store_gallery.getters.galleryActualLoading;
+			},
+			state() {
+				return window.store_gallery.getters.galleryActualStateGetter;
+			}
 		},
 		methods: {
 			removeLoad() {

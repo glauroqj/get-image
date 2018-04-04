@@ -16,8 +16,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <loading :loading="load" textload="Loading gallery..."></loading>
-                    <gallery :loading="load" :images="storageImage" :empty="emptyStore"></gallery>
+                    <loading :loading="loading" textload="Loading gallery..."></loading>
+                    <gallery :loading="loading" :images="state.storageImage" :empty="state.emptyStore"></gallery>
                     <modal :show="showModal" :id="imageID"></modal>
                 </div>
             </div>
@@ -83,12 +83,15 @@
     </script>
 
 <!-- <script src="../vendor/vue.min.js"></script> -->
+<script src="vuex.js"></script>
 <script src="vue.js"></script>
 <script src="jquery.min.js"></script>
 <script src="moment.js"></script>
 <script src="loading_component.js"></script>
 <script src="gallery_component.js"></script>
 <script src="modal_component.js"></script>
+
+<script src="store_gallery.js"></script>
 <script src="gallery.js"></script>
 <!--     <script src="../dist/components.min.js"></script>
     <script src="../dist/gallery.min.js"></script> -->

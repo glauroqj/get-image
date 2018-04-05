@@ -20,8 +20,8 @@
                     <h4 class="card-title mb-3">
                         Hello!
                         <span class="pull-right">
-                            <button type="button" class="btn btn-sm btn-outline-primary" :disabled="emptyStore" v-on:click="openGallery"><i class="fa fa-image"></i> 
-                                {{textGallery}} <span class="badge badge-light ml-2">{{countImages.length}}</span>
+                            <button type="button" class="btn btn-sm btn-outline-primary" :disabled="state.emptyStore" v-on:click="openGallery"><i class="fa fa-image"></i> 
+                                {{state.textGallery}} <span class="badge badge-light ml-2">{{state.countImages.length}}</span>
                             </button>
                         </span>
                     </h4>
@@ -45,10 +45,12 @@
 </div>
 
 <!-- <script src="../vendor/vue.min.js"></script> -->
+<script src="vuex.js"></script>
 <script src="vue.js"></script>
 <script src="jquery.min.js"></script>
 <script src="moment.js"></script>
 
+<script src="store_popup.js"></script>
 <script src="popup.js"></script>
 <!-- <script src="../dist/popup.min.js"></script> -->
 </body>

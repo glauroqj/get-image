@@ -17,8 +17,8 @@
             <div class="row">
                 <div class="col-xs-12">
                     <loading :loading="loading" textload="Loading gallery..."></loading>
-                    <gallery :loading="loading" :images="state.storageImage" :empty="state.emptyStore"></gallery>
-                    <modal :show="showModal" :id="imageID"></modal>
+                    <gallery :loading="loading" :images="state.countImages" :empty="state.emptyStore"></gallery>
+                    <modal :show="modal.showModal" :id="modal.imageID"></modal>
                 </div>
             </div>
         </div>

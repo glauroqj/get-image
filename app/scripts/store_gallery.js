@@ -55,6 +55,9 @@
           /* if is gallery is filled */
           let storageImage = localStorageImages.split(',');
 
+          /* reverse array */
+          storageImage = storageImage.reverse();
+
           storageImage.map( (value, index)=> {
             storageImage[index] = window.atob(value);
           });
